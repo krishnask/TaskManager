@@ -14,7 +14,7 @@ namespace TaskManager.BusinessServices
     {
         TaskMangagerContext _context;
         IMapper _mapper;
-        TaskServices()
+        public TaskServices()
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Task, TaskDTO>().ReverseMap());
             
@@ -37,11 +37,11 @@ namespace TaskManager.BusinessServices
 
             return list;
         }
-        public bool UpdateTask(TaskDTO newtask)
+        public bool UpdateTask(string taskNameKey, TaskDTO newtask)
         {
             Task taskData = _mapper.Map<Task>(newtask);
 
-            var task = _context.tasks.SingleOrDefault(t => t.TaskName == newtask.TaskName);
+            var task = _context.tasks.SingleOrDefault(t => t.TaskName == taskNameKey);
             if(task !=null)
             {
                 task = _mapper.Map<Task>(newtask);
