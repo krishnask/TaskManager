@@ -1,3 +1,54 @@
 <p>
-  update-task works!
+  <!-- update-task works! -->
+  <!-- {{task.startDate.toUTCString()}} -->
+  {{GetStartDate()}}
 </p>
+
+  <div class="container">
+      <h4>
+    <div class="form-group row">
+      <label class="control-label col-sm-2" for="task">Task:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="task" name="task" [(ngModel)] = "task.taskName" >
+      </div>
+    </div>
+  </h4>
+    <div class="form-group row">
+ 
+      <label class="control-label col-sm-2" for="priority"><h4>Priority:</h4></label>
+
+      <div class="col-sm-10">
+        <!-- <input type="text" class="form-control" id="priority" name="priority"> -->
+        <label for="priority"class="labelnomargin">0</label>
+        <label for="priority" class="float-right labelnomargin" >30</label>
+        <input type="range" class="form-control slider" id="priority" name="priority" min="0" max="30" [(ngModel)] = "task.priority">        
+      </div>
+    </div>
+    <h4>
+    <div class="form-group row">
+      <label class="control-label col-sm-2" for="parenttask">Parent Task:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="parenttask" name="parenttask" [(ngModel)] = "task.parentTask">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-sm-2" for="startdate">Start Date:</label>
+      <div class="col-sm-10">
+        <input type="date" value="" class="form-control" id="startdate" name="startdate" value = {{GetStartDate()}}>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-sm-2" for="enddate">End Date:</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" id="enddate" name="enddate" value= {{GetEndDate()}}>
+      </div>
+    </div>
+  </h4>
+    <div class="form-group text-center">
+        <button  class="btn-primary col-sm-1 text-center myborder" (click)='AddUpdate()'>Update</button>
+        <button class="btn-warning col-sm-1">Cancel</button>
+      </div>
+ 
+  </div>
+
+
