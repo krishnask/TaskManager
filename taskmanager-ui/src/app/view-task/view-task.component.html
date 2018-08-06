@@ -1,3 +1,22 @@
-<p>
-  view-task works!
-</p>
+  <app-search-task></app-search-task>
+  <br>
+  <table class="table borderless">
+    <tbody  *ngFor="let task of tasks">
+      <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Parent</th>
+        <th scope="col">Priority</th>
+        <th scope="col">Start</th>
+        <th scope="col">End</th>
+      </tr>
+  <tr>
+      <td>{{task.taskName}}</td>
+      <td>{{task.parent}}</td>
+      <td>{{task.priority}}</td>
+      <td>{{task.StartDate}}</td>
+      <td>{{task.EndDate}}</td>
+      <td><button>Edit</button></td>
+      <td><button>End Task</button></td>
+      </tr>
+    </tbody>
+  </table>
