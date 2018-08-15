@@ -1,7 +1,7 @@
   <app-search-task></app-search-task>
-  <!-- <br>
+  <br>
   <table class="table borderless">
-    <tbody  *ngFor="let task of tasks | searchFilter: taskFilter.taskName:taskFilter.parent:taskFilter.priorityFrom:taskFilter.priorityTo">
+    <tbody  *ngFor="let task of tasks | searchFilter: taskFilter.taskName:taskFilter.parent:taskFilter.priorityFrom:taskFilter.priorityTo:taskFilter.startDate:taskFilter.endDate">
       <tr>
         <th scope="col">Task</th>
         <th scope="col">Parent</th>
@@ -13,10 +13,10 @@
       <td>{{task.taskName}}</td>
       <td>{{task.parent}}</td>
       <td>{{task.priority}}</td>
-      <td>{{task.StartDate}}</td>
-      <td>{{task.EndDate}}</td>
+      <td>{{task.startDate}}</td>
+      <td>{{task.endDate}}</td>
       <td><button>Edit</button></td>
       <td><button>End Task</button></td>
       </tr>
     </tbody>
-  </table> -->
+  </table>

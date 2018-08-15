@@ -11,8 +11,8 @@ export class UpdateTaskComponent implements OnInit {
     taskName: "My First Task",
     priority: 2,
     parent: "My Parent",
-    startDate: new Date(2018, 8, 2),
-    endDate: new Date(8 / 8 / 2018)
+    startDate: "",
+    endDate: "new Date(8 / 8 / 2018)"
   };
   GetDate(date: Date) {
 
@@ -20,11 +20,10 @@ export class UpdateTaskComponent implements OnInit {
   pad(d) {
     return (d < 10) ? '0' + d.toString() : d.toString();
   }
-  GetStartDate() {
-    return this.task.startDate.getFullYear() + "-" + this.pad(this.task.startDate.getMonth()) + "-" + this.pad(this.task.startDate.getDate());
+  GetStartDate() { return this.task.startDate ;
   }
   GetEndDate() {
-    return this.task.endDate.getFullYear() + "-" + this.pad(this.task.endDate.getMonth()) + "-" + this.pad(this.task.endDate.getDate());
+    return this.task.endDate;
   }
   AddUpdate() {
     console.log("Task Name is");

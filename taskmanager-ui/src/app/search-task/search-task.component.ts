@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ITaskFilter} from '../Shared/ITaskFilter';
 import { TaskSearchService } from '../task-search.service';
 
-
 @Component({
   selector: 'app-search-task',
   templateUrl: './search-task.component.html',

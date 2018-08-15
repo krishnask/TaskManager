@@ -2,6 +2,6 @@ export interface ITask{
     taskName: string;
     priority:number;
     parent:string;
-    startDate:Date;
-    endDate:Date;
+    startDate:string;
+    endDate:string;
 }

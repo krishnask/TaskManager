@@ -19,30 +19,30 @@ export class ViewTaskComponent implements OnInit {
 
 private tasks:ITask[];
 public taskFilter:ITaskFilter;
-  mytask: ITask[] = 
-  [
-    {
-        "taskName": "First Task",
-        "parent": "First Parent",
-        "priority": 2,
-        "startDate": new Date("2015-03-25"),
-        "endDate": new Date("2015-03-25")
-    },
-    {
-        "taskName": "Second Task",
-        "parent": "Second Parent",
-        "priority": 5,
-        "startDate": new Date("2015-03-25"),
-        "endDate": new Date("2015-03-25")
-    },
-    {
-        "taskName": "custom one",
-        "parent": "here too a custom",
-        "priority": 20,
-        "startDate": new Date("2015-03-25"),
-        "endDate": new Date("2017-03-17")
-    }
-]
+//   mytask: ITask[] = 
+//   [
+//     {
+//         "taskName": "First Task",
+//         "parent": "First Parent",
+//         "priority": 2,
+//         "startDate": new Date("2015-03-25"),
+//         "endDate": new Date("2015-03-25")
+//     },
+//     {
+//         "taskName": "Second Task",
+//         "parent": "Second Parent",
+//         "priority": 5,
+//         "startDate": new Date("2015-03-25"),
+//         "endDate": new Date("2015-03-25")
+//     },
+//     {
+//         "taskName": "custom one",
+//         "parent": "here too a custom",
+//         "priority": 20,
+//         "startDate": new Date("2015-03-25"),
+//         "endDate": new Date("2017-03-17")
+//     }
+// ]
 
   ngOnInit() { 
        this.dal.getTasks().subscribe(task => {

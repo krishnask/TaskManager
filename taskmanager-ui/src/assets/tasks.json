@@ -3,35 +3,35 @@
         "taskName": "First Task",
         "parent": "First Parent",
         "priority": 2,
-        "StartDate": "2015-03-25",
-        "EndDate": "2015-03-25"
+        "startDate": "2015-03-25",
+        "endDate": "2015-03-25"
     },
     {
         "taskName": "Second Task",
         "parent": "Second Parent",
         "priority": 5,
-        "StartDate": "2015-03-25",
-        "EndDate": "2015-03-25"
+        "startDate": "2017-03-25",
+        "endDate": "2015-03-25"
     },
     {
         "taskName": "custom one",
         "parent": "here too a custom",
         "priority": 20,
-        "StartDate": "2015-03-25",
-        "EndDate": "2017-03-17"
+        "startDate": "2015-03-25",
+        "endDate": "2017-03-17"
     },
     {
         "taskName": "template name",
         "parent": "Third Parent -  delete me to test",
         "priority": 25,
-        "StartDate": "2015-03-25",
-        "EndDate": "2017-03-17"
+        "startDate": "2015-03-25",
+        "endDate": "2017-03-17"
     },
     {
         "taskName": "just another task",
         "parent": "have 2 parents - father n mother",
         "priority": 10,
-        "StartDate": "2015-03-25",
-        "EndDate": "2017-03-17"
+        "startDate": "2015-03-25",
+        "endDate": "2017-03-17"
     }
 ]

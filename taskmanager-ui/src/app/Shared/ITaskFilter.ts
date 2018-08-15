@@ -4,6 +4,6 @@ export interface ITaskFilter
     parent :string;
     priorityFrom :number;
     priorityTo :number;
-    startDate :Date;
-    endDate :Date;
+    startDate :string;
+    endDate :string;
 }

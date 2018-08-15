@@ -19,9 +19,9 @@
       </div>
       <div class="col-md-6">
         <label class="col-md-3">Start Date:</label>
-        <input  type = "date" col-md-3" id="startDate-search" [(ngModel)] = "taskFilter.startDate"  #taskBoxSearch (keyup)="search(startDateSearch.value)"/>
+        <input class ="col-md-3" type="text" id="startDate-search" [(ngModel)] = "taskFilter.startDate" bsDatepicker />      
         <label class="col-md-3">End Date:</label>
-        <input class="col-md-3" id="endDate-search" [(ngModel)] = "taskFilter.endDate"  #taskBoxSearch (keyup)="search(endDateSearch.value)" />
+        <input type = "text"class="col-md-3" id="endDate-search" [(ngModel)] = "taskFilter.endDate" bsDatepicker/>
       </div>
     </div>
 
