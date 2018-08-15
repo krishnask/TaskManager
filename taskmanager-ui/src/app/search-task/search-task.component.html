@@ -3,26 +3,27 @@
 <div class="container col-md-11">
   <div class="row"></div>
   <label class="col-md-1">Task:</label>
-  <input class="col-md-5" id="task-search" #taskSearch (keyup)="search(taskSearch.value)" />
+  <input class="col-md-5" id="task-search" [(ngModel)] = "taskFilter.taskName" />
   <label class="col-md-2">Parent Task:</label>
-  <input class="col-md-4" id="parent-search" #parentSearch (keyup)="search(parentSearch.value)" />
+  <input class="col-md-4" id="parent-search" [(ngModel)] = "taskFilter.parent" />
 </div>
 <br>
 <div>
-  <div class="container col-md-11">
+  <div class="container col-md-11 form-group">
     <div class="row">
       <div class="col-md-6">
         <label class="col-md-3">Priority From:</label>
-        <input class="col-md-3" id="priorityFrom-search" #priorityFromSearch (keyup)="search(priorityFromSearch.value)" />
+        <input class="col-md-3" id="priorityFrom-search" [(ngModel)] = "taskFilter.priorityFrom" />
         <label class="col-md-3">Priority To:</label>
-        <input class="col-md-3" id="priorityTo-search" #priorityToSearch (keyup)="search(priorityToSearch.value)" />
+        <input class="col-md-3" id="priorityTo-search" [(ngModel)] = "taskFilter.priorityTo"/>
       </div>
       <div class="col-md-6">
         <label class="col-md-3">Start Date:</label>
-        <input class="col-md-3" id="startDate-search" #taskBoxSearch (keyup)="search(startDateSearch.value)" />
+        <input  type = "date" col-md-3" id="startDate-search" [(ngModel)] = "taskFilter.startDate"  #taskBoxSearch (keyup)="search(startDateSearch.value)"/>
         <label class="col-md-3">End Date:</label>
-        <input class="col-md-3" id="endDate-search" #taskBoxSearch (keyup)="search(endDateSearch.value)" />
+        <input class="col-md-3" id="endDate-search" [(ngModel)] = "taskFilter.endDate"  #taskBoxSearch (keyup)="search(endDateSearch.value)" />
       </div>
     </div>
+
   </div>
 </div>

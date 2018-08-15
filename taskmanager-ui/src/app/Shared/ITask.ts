@@ -1,7 +1,7 @@
-export class Task{
+export interface ITask{
     taskName: string;
     priority:number;
-    parentTask:string;
+    parent:string;
     startDate:Date;
     endDate:Date;
 }

@@ -1,7 +1,7 @@
   <app-search-task></app-search-task>
-  <br>
+  <!-- <br>
   <table class="table borderless">
-    <tbody  *ngFor="let task of tasks">
+    <tbody  *ngFor="let task of tasks | searchFilter: taskFilter.taskName:taskFilter.parent:taskFilter.priorityFrom:taskFilter.priorityTo">
       <tr>
         <th scope="col">Task</th>
         <th scope="col">Parent</th>
@@ -19,4 +19,4 @@
       <td><button>End Task</button></td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
