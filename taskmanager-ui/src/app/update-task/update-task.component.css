@@ -9,6 +9,9 @@
 .myborder
 {
     margin-right: 2%;
+    border: 2px;
+    border-style: solid;
+    border-color: gray;
 }
 .mylabel1 {
     display:block;
@@ -43,7 +46,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%; 
-    background: green;
+    background:grey;
     cursor: pointer;
     border-color: black;
     border-style: solid;
@@ -54,7 +57,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #4CAF50;
+    background:grey;
     cursor: pointer;
     border-color: black;
     border:solid;

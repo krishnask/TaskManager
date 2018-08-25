@@ -8,23 +8,14 @@ import { ITask } from "../Shared/ITask"
 })
 export class UpdateTaskComponent implements OnInit {
   task: ITask = {
-    taskName: "My First Task",
-    priority: 2,
-    parent: "My Parent",
+    taskName: "",
+    priority: 0,
+    parent: "",
     startDate: "",
-    endDate: "new Date(8 / 8 / 2018)"
+    endDate: ""
   };
-  GetDate(date: Date) {
+ 
 
-  };
-  pad(d) {
-    return (d < 10) ? '0' + d.toString() : d.toString();
-  }
-  GetStartDate() { return this.task.startDate ;
-  }
-  GetEndDate() {
-    return this.task.endDate;
-  }
   AddUpdate() {
     console.log("Task Name is");
     console.log(this.task);

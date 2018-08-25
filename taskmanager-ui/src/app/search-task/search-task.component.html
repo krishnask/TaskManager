@@ -1,28 +1,47 @@
 <br>
-<div class="container col-md-11">
-  <div class="row"></div>
-  <label class="col-md-1">Task:</label>
-  <input class="col-md-5" id="task-search" [(ngModel)] = "taskFilter.taskName" />
-  <label class="col-md-2">Parent Task:</label>
-  <input class="col-md-4" id="parent-search" [(ngModel)] = "taskFilter.parent" />
-</div>
-<br>
-<div>
-  <div class="container col-md-11 form-group">
-    <div class="row">
-      <div class="col-md-6">
-        <label class="col-md-3">Priority From:</label>
-        <input class="col-md-3" id="priorityFrom-search" [(ngModel)] = "taskFilter.priorityFrom" />
-        <label class="col-md-3">Priority To:</label>
-        <input class="col-md-3" id="priorityTo-search" [(ngModel)] = "taskFilter.priorityTo"/>
-      </div>
-      <div class="col-md-6">
-        <label class="col-md-3">Start Date:</label>
-        <input class ="col-md-3" type="text" id="startDate-search" [(ngModel)] = "taskFilter.startDate" bsDatepicker />      
-        <label class="col-md-3">End Date:</label>
-        <input type = "text"class="col-md-3" id="endDate-search" [(ngModel)] = "taskFilter.endDate" bsDatepicker/>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1">
+      <label>Task:</label>
     </div>
-
+    <div class="col-md-5">
+      <input class="greyback" type="text"  size="50"  [(ngModel)]="taskFilter.taskName">
+    </div>
+    <div class="col-md-1">
+      <label>Parent Task:</label>
+    </div>
+    <div class="col-md-5">
+      <input class="greyback" type="text" size="50" [(ngModel)]="taskFilter.parent">
+    </div>
   </div>
-</div>
+<br>
+    <div class="row rt-mar-10">
+        <div class="col">
+            <label>Priority From:</label>
+        </div>
+        <div class="col">
+            <input class="greyback" id="priorityFrom-search" [(ngModel)] = "taskFilter.priorityFrom" />
+        </div>
+        <div class="col">
+            <label >Priority To:</label>
+        </div>
+        <div class="col">
+            <input class="greyback" id="priorityTo-search" [(ngModel)] = "taskFilter.priorityTo"/>
+        </div>
+        <div class="col">
+            <label>Start Date:</label>
+        </div>
+        <div class="col">
+            <input class ="greyback" type="text" id="startDate-search" [(ngModel)] = "taskFilter.startDate" bsDatepicker />      
+        </div>
+        <div class="col">
+            <label>End Date:</label>
+        </div>
+        <div class="col">
+            <input type = "text"class=" greyback" id="endDate-search" [(ngModel)] = "taskFilter.endDate" bsDatepicker/>
+        </div>
+    </div>
+  </div>
+       
+ 
+    <hr class="dotted" />

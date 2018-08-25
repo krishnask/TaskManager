@@ -1,12 +1,15 @@
 <!-- <app-update-task></app-update-task> -->
 <br>
 <h4 class = "ml-2">Task Manager</h4>
-<div class = "row">
-<nav class ="col-md-6">
-  <a class = "col-md-6" routerLink="/update">Add Task</a>
-  <a class = "col-md-6" routerLink="/view">View Task</a>
-</nav>
-</div>
+<!-- <nav class ="navbar-nav navbar-default">
+  <a class = "nav-item color-me" routerLink="/update">Add Task</a>
+  <a class = "nav-item color-me" routerLink="/view">View Task</a>
+</nav> -->
+<ul class="nav">
+  <li><a class = "color-me" routerLink="/update" [routerLinkActive]="'is-active'">Add Task</a></li>
+  <li><a class = "color-me" routerLink="/view" [routerLinkActive]="'is-active'">View Task</a></li>
+</ul>
+
 <router-outlet></router-outlet>
 
 <!--The content below is only a placeholder and can be replaced.

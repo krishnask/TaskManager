@@ -3,6 +3,7 @@ import { ITask } from '../Shared/ITask';
 import { TasksDalService } from '../tasks-dal.service';
 import{ITaskFilter} from '../Shared/ITaskFilter';
 import { TaskSearchService } from '../task-search.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-view-task',
@@ -11,7 +12,7 @@ import { TaskSearchService } from '../task-search.service';
 })
 export class ViewTaskComponent implements OnInit {
 
-  constructor(private dal:TasksDalService , private tf:TaskSearchService) { }
+  constructor(private dal:TasksDalService , private tf:TaskSearchService, private router: Router) { }
   //Delete me ASAP
 
   
@@ -19,6 +20,10 @@ export class ViewTaskComponent implements OnInit {
 
 private tasks:ITask[];
 public taskFilter:ITaskFilter;
+public EditTask():void{
+  console.log("Edit Task called");
+  this.router.navigate(['update']);
+}
 //   mytask: ITask[] = 
 //   [
 //     {

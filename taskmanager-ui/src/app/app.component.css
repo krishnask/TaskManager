@@ -1,0 +1,18 @@
+a:link, a:visited {
+    color: blue;
+  }
+  
+  a.current:link, a.current:visited {
+    color: white;
+    background-color: blue;
+  }
+  a.color-me{
+      color:black;
+      margin-left: 20px;
+  }
+
+  a.is-active{
+    color:blue;
+    font-weight: bold;
+    margin-left: 20px;
+}

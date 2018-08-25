@@ -8,7 +8,7 @@
     },
     {
         "taskName": "Second Task",
-        "parent": "Second Parent",
+        "parent": "",
         "priority": 5,
         "startDate": "2017-03-25",
         "endDate": "2015-03-25"

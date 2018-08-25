@@ -1,1 +1,12 @@
 body { margin: 2em; }
+.greyback {
+    background-color:lightgray;
+    border: none;
+    padding-left: 10px;
+    border-right: 10px;
+}
+.rt-mar-10{
+    
+    margin-right: 5%;
+}
+.dotted {border: 1px dotted lightgray; border-style: none none dotted; color: #fff; background-color: #fff; }

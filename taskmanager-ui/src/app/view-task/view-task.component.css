@@ -1,3 +1,14 @@
 .borderless td, .borderless th {
     border: none;
 }
+.greylabel {
+    background-color:lightgray;
+    margin-right: 5%;
+    margin-left: 5%;
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -3,20 +3,20 @@
   <table class="table borderless">
     <tbody  *ngFor="let task of tasks | searchFilter: taskFilter.taskName:taskFilter.parent:taskFilter.priorityFrom:taskFilter.priorityTo:taskFilter.startDate:taskFilter.endDate">
       <tr>
-        <th scope="col">Task</th>
-        <th scope="col">Parent</th>
-        <th scope="col">Priority</th>
-        <th scope="col">Start</th>
-        <th scope="col">End</th>
+        <th scope="col" style="width:25%">Task</th>
+        <th scope="col"style="width:25%">Parent</th>
+        <th scope="col" style="width:10%">Priority</th>
+        <th scope="col" style="width:10%">Start</th>
+        <th scope="col" style="width:10%">End</th>
       </tr>
   <tr>
-      <td>{{task.taskName}}</td>
-      <td>{{task.parent}}</td>
+      <td><div class ="greylabel">{{task.taskName}}</div></td>
+      <td><div class ="greylabel">{{task.parent}}</div></td>
       <td>{{task.priority}}</td>
       <td>{{task.startDate}}</td>
       <td>{{task.endDate}}</td>
-      <td><button>Edit</button></td>
-      <td><button>End Task</button></td>
-      </tr>
+      <td><button style="width:100px" (click)="EditTask()">Edit</button></td>
+      <td><button style="width:100px">End Task</button></td>
+    </tr>
     </tbody>
   </table>
