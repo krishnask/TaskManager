@@ -22,9 +22,9 @@
     </div>
     <h4>
     <div class="form-group row">
-      <label class="control-label col-sm-2" for="parenttask">Parent Task:</label>
+      <label class="control-label col-sm-2" for="parent">Parent Task:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="parenttask" name="parenttask" [(ngModel)] = "task.parentTask">
+        <input type="text" class="form-control" id="parent" name="parent" [(ngModel)] = "task.parent">
       </div>
     </div>
     <div class="form-group row">
@@ -42,7 +42,7 @@
   </h4>
     <div class="form-group text-center">
         <button  class="btn col-sm-1 text-center myborder" (click)='AddUpdate()'>Update</button>
-        <button class="btn col-sm-1 myborder">Cancel</button>
+        <button class="btn col-sm-1 myborder"  (click)='Cancel()'>Cancel</button>
       </div>
  
   </div>

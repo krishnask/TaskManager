@@ -4,7 +4,8 @@ import {UpdateTaskComponent} from './update-task/update-task.component';
 import {ViewTaskComponent} from './view-task/view-task.component';
 
 const routes: Routes = [
-{path: 'update', component: UpdateTaskComponent  },
+{path: 'add', component: UpdateTaskComponent  },
+{path: 'edit/:id', component: UpdateTaskComponent  },
 {path: 'view', component: ViewTaskComponent},
 {path: '', component: ViewTaskComponent}
 ];

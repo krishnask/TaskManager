@@ -20,9 +20,11 @@ export class ViewTaskComponent implements OnInit {
 
 private tasks:ITask[];
 public taskFilter:ITaskFilter;
-public EditTask():void{
+public EditTask(taskId:number):void{
   console.log("Edit Task called");
-  this.router.navigate(['update']);
+  const link = '../edit/'+ taskId;
+  console.log(link);
+  this.router.navigate([link]);
 }
 //   mytask: ITask[] = 
 //   [
