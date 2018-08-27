@@ -21,9 +21,7 @@ export class ViewTaskComponent implements OnInit {
 private tasks:ITask[];
 public taskFilter:ITaskFilter;
 public EditTask(taskId:number):void{
-  console.log("Edit Task called");
   const link = '../edit/'+ taskId;
-  console.log(link);
   this.router.navigate([link]);
 }
 //   mytask: ITask[] = 
@@ -54,7 +52,6 @@ public EditTask(taskId:number):void{
   ngOnInit() { 
        this.dal.getTasks().subscribe(task => {
          this.tasks = task;
-          console.log(this.tasks);
         }
         );
         this.taskFilter = this.tf.taskFilter;

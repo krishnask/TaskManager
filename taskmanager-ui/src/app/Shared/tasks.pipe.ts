@@ -7,23 +7,9 @@ import { ITask } from './ITask';
 @Injectable()
 export class FilterPipe implements PipeTransform {
     transform(items: ITask[], nameSearch: string, parentSearch: string, priorityFromSearch:number, priorityToSearch:number, startDateSearch:string, endDateSearch:string): ITask[] {
-        console.log("Inside Transform");
-        console.log(nameSearch);
-        console.log(parentSearch);
         
-        if(startDateSearch)
-        {
-            console.log("Start date search is not empty");
-            console.log(startDateSearch);
-        }
-        else{
-            console.log("Empty start date");
-        }
-
         if (!items) return [];
         return items.filter(items => {
-            console.log(items);
-            console.log(items.taskName);
             if(nameSearch && items.taskName.toLocaleLowerCase().indexOf(nameSearch.toLocaleLowerCase()) == -1){
                 return false;}
                 if(parentSearch && items.parent.toLocaleLowerCase().indexOf(parentSearch.toLocaleLowerCase()) == -1){

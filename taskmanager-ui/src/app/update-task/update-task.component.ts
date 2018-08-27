@@ -1,7 +1,8 @@
 import { ITask, Task } from "../Shared/ITask"
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { TasksDalService } from "../tasks-dal.service";
+import { Route } from "../../../node_modules/@angular/compiler/src/core";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class UpdateTaskComponent implements OnInit {
   @Output() close = new EventEmitter();
   error: any;
   navigated = false; // true if navigated here
-
+  buttonCaption:string;
   task1: ITask = {
     taskId:0,
     taskName: "empty",
@@ -26,39 +27,39 @@ export class UpdateTaskComponent implements OnInit {
 
 
   AddUpdate() {
-    console.log("Task Name is");
-    console.log(this.task);
-    console.log("Method AddUpdate Called....");
+console.log("TODO - call service here to update");
   }
 
   Cancel() {
-    console.log("cancel");
+    
+    if(this.navigated =true)
+    {
+      const url = '../../view';
+      this.router.navigate([url]);
+    }
+    else{
+      const url = '../view';
+      this.router.navigate([url]);
+    }   
   }
   constructor(   private taskService: TasksDalService,
-    private route: ActivatedRoute) {
-      console.log("constructor - update task");
+    private route: ActivatedRoute, private router : Router) {
       this.task = new Task();
      }
 
   ngOnInit(): void {
-    console.log("ngOnInit - update task");
     this.route.params.forEach((params: Params) => {
       if (params['id'] !== undefined) {
         const id = +params['id'];
-        console.log(id);
         this.navigated = true;
+        this.buttonCaption = "Update";
          this.taskService.getTask(id).subscribe(task => 
         {
-          console.log("asignment");
           this.task = task;
-          console.log("Before");
-        console.log(this.task);
-        console.log("after");
         })
       } else {
-        console.log("No id passed");
         this.navigated = false;
-       // this.task = new Task();
+        this.buttonCaption = "Add";
       }
     });
   }

@@ -14,14 +14,11 @@ export class TasksDalService {
 
   public getTasks()
   {
-    console.log("Inside get tasks");
     return this.http.get<ITask[]>(this.taskUrl)
     .pipe(map(data => data), catchError(this.handleError));
   }
   public getTask(taskId:number):Observable<ITask>
   {
-    console.log("get task called");
-    console.log(taskId);
     return this.getTasks().pipe(
       map(tasks => tasks.find(task => task.taskId === taskId))
     );
