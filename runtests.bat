@@ -1,0 +1,1 @@
+.\packages\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe .\TaskManager.Tests\bin\Release\TaskManager.Tests.dll
