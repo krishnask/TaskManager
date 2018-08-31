@@ -10,7 +10,7 @@ namespace TaskManager.BusinessServices
     public interface ITaskServices
     {
         bool AddTask(TaskDTO task);
-        List<TaskDTO> GetTasks(FilterDTO filter);
+        List<TaskDTO> GetTasks();
         bool UpdateTask(string taskNameKey, TaskDTO task);
         bool CompleteTask(string taskName);
         bool DeleteTask(string taskName);

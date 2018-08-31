@@ -33,7 +33,19 @@ namespace TaskManager.BusinessServices
         {
             // TODO use filter with linq
             var data = _context.tasks.ToList<Task>();
+            if (data == null)
+            {
+                throw new ApplicationException("No value read from database");
+            }
             var list=  _mapper.Map<List<Task>, List<TaskDTO>>(data);
+
+            return list;
+        }
+        public List<TaskDTO> GetTasks()
+        {
+            
+            var data = _context.tasks.ToList<Task>();
+            var list = _mapper.Map<List<Task>, List<TaskDTO>>(data);
 
             return list;
         }

@@ -6,6 +6,10 @@ using System.Net.Http;
 using System.Web.Http;
 using TaskManager.BusinessServices;
 using TaskManager.BusinessEntities;
+// get - no filter - implement, test using postman, test using nunit, test using nBench, find coverage using nCover
+// integrate unit testing, coverage and load testing using jenkins, deploy in iis
+//post - create
+//put - update
 
 namespace TaskManager.WebAPI.Controllers
 {
@@ -18,21 +22,21 @@ namespace TaskManager.WebAPI.Controllers
             _repository = new TaskServices();
         }
         // GET api/tasks
-        public IHttpActionResult Get(FilterDTO filter)
+        public IHttpActionResult Get()
         {
-            List<TaskDTO> tasks = _repository.GetTasks(filter);
+            try
+            {
+                List<TaskDTO> tasks = _repository.GetTasks();
 
-            return Ok(tasks);
+                return Ok(tasks);
+            }
+            catch(Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+            
         }
        
-
-        // GET api/tasks/5
-       /* public IHttpActionResult Get(string taskName)
-        {
-            TaskDTO task = _repository.
-            return Ok();
-        }*/
-
         // POST api/tasks
         // post us used to create new 
         public IHttpActionResult Post(TaskDTO task)

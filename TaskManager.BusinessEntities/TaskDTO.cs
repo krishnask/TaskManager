@@ -8,6 +8,7 @@ namespace TaskManager.BusinessEntities
 {
     public class TaskDTO
     {
+        public int TaskId { get; set; }
         public string TaskName { get; set; }
         public short Priority { get; set; }
         public string ParentTaskName { get; set; }
