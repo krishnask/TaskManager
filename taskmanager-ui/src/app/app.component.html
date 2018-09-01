@@ -7,7 +7,8 @@
 </nav> -->
 <ul class="nav">
   <li><a class = "color-me" routerLink="/add" [routerLinkActive]="'is-active'">Add Task</a></li>
-  <li><a class = "color-me" routerLink="/view" [routerLinkActive]="'is-active'">View Task</a></li>
+  <li><a class = "color-me" routerLink="/edit" [routerLinkActive]="'is-active'">Edit Task</a></li>
+  <li><a class = "color-me" routerLink="/view"  routerLink="/"  [routerLinkActive]="'is-active'" [routerLinkActiveOptions]="{exact:true}">View Task</a></li>
 </ul>
 
 <router-outlet></router-outlet>
