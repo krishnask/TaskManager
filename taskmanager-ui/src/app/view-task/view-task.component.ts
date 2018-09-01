@@ -18,34 +18,34 @@ export class ViewTaskComponent implements OnInit {
   
 
 
-private tasks:ITask[];
+public tasks:ITask[];
 public taskFilter:ITaskFilter;
-public EditTask(taskId:number):void{
-  const link = '../edit/'+ taskId;
+public EditTask(TaskId:number):void{
+  const link = '../edit/'+ TaskId;
   this.router.navigate([link]);
 }
 //   mytask: ITask[] = 
 //   [
 //     {
-//         "taskName": "First Task",
-//         "parent": "First Parent",
-//         "priority": 2,
-//         "startDate": new Date("2015-03-25"),
-//         "endDate": new Date("2015-03-25")
+//         "TaskName": "First Task",
+//         "ParentTaskName": "First ParentTaskName",
+//         "Priority": 2,
+//         "StartDate": new Date("2015-03-25"),
+//         "EndDate": new Date("2015-03-25")
 //     },
 //     {
-//         "taskName": "Second Task",
-//         "parent": "Second Parent",
-//         "priority": 5,
-//         "startDate": new Date("2015-03-25"),
-//         "endDate": new Date("2015-03-25")
+//         "TaskName": "Second Task",
+//         "ParentTaskName": "Second ParentTaskName",
+//         "Priority": 5,
+//         "StartDate": new Date("2015-03-25"),
+//         "EndDate": new Date("2015-03-25")
 //     },
 //     {
-//         "taskName": "custom one",
-//         "parent": "here too a custom",
-//         "priority": 20,
-//         "startDate": new Date("2015-03-25"),
-//         "endDate": new Date("2017-03-17")
+//         "TaskName": "custom one",
+//         "ParentTaskName": "here too a custom",
+//         "Priority": 20,
+//         "StartDate": new Date("2015-03-25"),
+//         "EndDate": new Date("2017-03-17")
 //     }
 // ]
 

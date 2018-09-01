@@ -5,13 +5,13 @@
       <label>Task:</label>
     </div>
     <div class="col-md-5">
-      <input class="greyback" type="text"  size="50"  [(ngModel)]="taskFilter.taskName">
+      <input class="greyback" type="text"  size="50"  [(ngModel)]="taskFilter.TaskName">
     </div>
     <div class="col-md-1">
-      <label>Parent Task:</label>
+      <label>ParentTaskName Task:</label>
     </div>
     <div class="col-md-5">
-      <input class="greyback" type="text" size="50" [(ngModel)]="taskFilter.parent">
+      <input class="greyback" type="text" size="50" [(ngModel)]="taskFilter.ParentTaskName">
     </div>
   </div>
 <br>
@@ -20,25 +20,25 @@
             <label>Priority From:</label>
         </div>
         <div class="col">
-            <input class="greyback" id="priorityFrom-search" [(ngModel)] = "taskFilter.priorityFrom" />
+            <input class="greyback" id="PriorityFrom-search" [(ngModel)] = "taskFilter.PriorityFrom" />
         </div>
         <div class="col">
             <label >Priority To:</label>
         </div>
         <div class="col">
-            <input class="greyback" id="priorityTo-search" [(ngModel)] = "taskFilter.priorityTo"/>
+            <input class="greyback" id="PriorityTo-search" [(ngModel)] = "taskFilter.PriorityTo"/>
         </div>
         <div class="col">
             <label>Start Date:</label>
         </div>
         <div class="col">
-            <input class ="greyback" type="text" id="startDate-search" [(ngModel)] = "taskFilter.startDate" bsDatepicker />      
+            <input class ="greyback" type="text" id="StartDate-search" [(ngModel)] = "taskFilter.StartDate" bsDatepicker />      
         </div>
         <div class="col">
             <label>End Date:</label>
         </div>
         <div class="col">
-            <input type = "text"class=" greyback" id="endDate-search" [(ngModel)] = "taskFilter.endDate" bsDatepicker/>
+            <input type = "text"class=" greyback" id="EndDate-search" [(ngModel)] = "taskFilter.EndDate" bsDatepicker/>
         </div>
     </div>
   </div>

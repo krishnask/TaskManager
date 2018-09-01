@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  getTasksUrl:'http://172.18.4.141:3232/api/tasks'
 };
 
 /*

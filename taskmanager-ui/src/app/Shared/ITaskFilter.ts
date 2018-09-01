@@ -1,9 +1,9 @@
 export interface ITaskFilter
 {
-    taskName :string;
-    parent :string;
-    priorityFrom :number;
-    priorityTo :number;
-    startDate :string;
-    endDate :string;
+    TaskName :string;
+    ParentTaskName :string;
+    PriorityFrom :number;
+    PriorityTo :number;
+    StartDate :string;
+    EndDate :string;
 }

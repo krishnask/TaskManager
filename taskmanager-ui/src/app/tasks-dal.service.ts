@@ -3,6 +3,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ITask } from './Shared/ITask';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError as observableThrowError } from 'rxjs';
+import { environment } from '../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +12,17 @@ import { Observable, throwError as observableThrowError } from 'rxjs';
 export class TasksDalService {
 
   constructor(private http:HttpClient) { }
-  taskUrl: string = 'http://localhost:4200/assets/tasks.json';
+  taskUrl: string = 'assets/tasks.json';
 
   public getTasks()
   {
-    return this.http.get<ITask[]>(this.taskUrl)
+    return this.http.get<ITask[]>(environment.getTasksUrl)
     .pipe(map(data => data), catchError(this.handleError));
   }
-  public getTask(taskId:number):Observable<ITask>
-  {
+  public getTask(TaskId:number):Observable<ITask>
+  {``
     return this.getTasks().pipe(
-      map(tasks => tasks.find(task => task.taskId === taskId))
+      map(tasks => tasks.find(task => task.TaskId === TaskId))
     );
   }
   private handleError(res: HttpErrorResponse | any) {

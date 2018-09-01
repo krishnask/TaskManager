@@ -5,38 +5,38 @@
     <div class="form-group row">
       <label class="control-label col-sm-2" for="task">Task:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="task" name="task" [(ngModel)] = "task.taskName" >
+        <input type="text" class="form-control" id="task" name="task" [(ngModel)] = "task.TaskName" >
       </div>
     </div>
   </h4>
     <div class="form-group row">
  
-      <label class="control-label col-sm-2" for="priority"><h4>Priority:</h4></label>
+      <label class="control-label col-sm-2" for="Priority"><h4>Priority:</h4></label>
 
       <div class="col-sm-10">
-        <!-- <input type="text" class="form-control" id="priority" name="priority"> -->
-        <label for="priority"class="labelnomargin">0</label>
-        <label for="priority" class="float-right labelnomargin" >30</label>
-        <input type="range" class="form-control slider" id="priority" name="priority" min="0" max="30" [(ngModel)] = "task.priority">        
+        <!-- <input type="text" class="form-control" id="Priority" name="Priority"> -->
+        <label for="Priority"class="labelnomargin">0</label>
+        <label for="Priority" class="float-right labelnomargin" >30</label>
+        <input type="range" class="form-control slider" id="Priority" name="Priority" min="0" max="30" [(ngModel)] = "task.Priority">        
       </div>
     </div>
     <h4>
     <div class="form-group row">
-      <label class="control-label col-sm-2" for="parent">Parent Task:</label>
+      <label class="control-label col-sm-2" for="ParentTaskName">ParentTaskName Task:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="parent" name="parent" [(ngModel)] = "task.parent">
+        <input type="text" class="form-control" id="ParentTaskName" name="ParentTaskName" [(ngModel)] = "task.ParentTaskName">
       </div>
     </div>
     <div class="form-group row">
-      <label class="control-label col-sm-2" for="startdate">Start Date:</label>
+      <label class="control-label col-sm-2" for="StartDate">Start Date:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="startdate" name="startdate" [(ngModel)] = "task.startDate" bsDatepicker>
+        <input type="text" class="form-control" id="StartDate" name="StartDate" [(ngModel)] = "task.StartDate" bsDatepicker>
       </div>
     </div>
     <div class="form-group row">
-      <label class="control-label col-sm-2" for="enddate">End Date:</label>
+      <label class="control-label col-sm-2" for="EndDate">End Date:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="enddate" name="enddate" [(ngModel)] = "task.endDate" bsDatepicker>
+        <input type="text" class="form-control" id="EndDate" name="EndDate" [(ngModel)] = "task.EndDate" bsDatepicker>
       </div>
     </div>
   </h4>

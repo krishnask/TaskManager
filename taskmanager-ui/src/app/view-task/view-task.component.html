@@ -1,21 +1,21 @@
   <app-search-task></app-search-task>
   <br>
   <table class="table borderless">
-    <tbody  *ngFor="let task of tasks | searchFilter: taskFilter.taskName:taskFilter.parent:taskFilter.priorityFrom:taskFilter.priorityTo:taskFilter.startDate:taskFilter.endDate">
+    <tbody  *ngFor="let task of tasks | searchFilter: taskFilter.TaskName:taskFilter.ParentTaskName:taskFilter.PriorityFrom:taskFilter.PriorityTo:taskFilter.StartDate:taskFilter.EndDate">
       <tr>
         <th scope="col" style="width:25%">Task</th>
-        <th scope="col"style="width:25%">Parent</th>
+        <th scope="col"style="width:25%">ParentTaskName</th>
         <th scope="col" style="width:10%">Priority</th>
         <th scope="col" style="width:10%">Start</th>
         <th scope="col" style="width:10%">End</th>
       </tr>
   <tr>
-      <td><div class ="greylabel">{{task.taskName}}</div></td>
-      <td><div class ="greylabel">{{task.parent}}</div></td>
-      <td>{{task.priority}}</td>
-      <td>{{task.startDate}}</td>
-      <td>{{task.endDate}}</td>
-      <td><button style="width:100px"  (click)="EditTask(task.taskId)">Edit</button></td>
+      <td><div class ="greylabel">{{task.TaskName}}</div></td>
+      <td><div class ="greylabel">{{task.ParentTaskName}}</div></td>
+      <td>{{task.Priority}}</td>
+      <td>{{task.StartDate}}</td>
+      <td>{{task.EndDate}}</td>
+      <td><button style="width:100px"  (click)="EditTask(task.TaskId)">Edit</button></td>
       <td><button style="width:100px">End Task</button></td>
     </tr>
     </tbody>

@@ -9,7 +9,7 @@ export class TaskSearchService {
 
   public taskFilter:ITaskFilter =
   {
-      "taskName" :"", "parent" :"", "priorityFrom" :null, "priorityTo" :null,"startDate" :  "", 
-      "endDate" : null
+      "TaskName" :"", "ParentTaskName" :"", "PriorityFrom" :null, "PriorityTo" :null,"StartDate" :  "", 
+      "EndDate" : null
   }
 }

@@ -17,12 +17,12 @@ export class UpdateTaskComponent implements OnInit {
   navigated = false; // true if navigated here
   buttonCaption:string;
   task1: ITask = {
-    taskId:0,
-    taskName: "empty",
-    priority: 0,
-    parent: "",
-    startDate: "",
-    endDate: ""
+    TaskId:0,
+    TaskName: "empty",
+    Priority: 0,
+    ParentTaskName: "",
+    StartDate: "",
+    EndDate: ""
   };
 
 

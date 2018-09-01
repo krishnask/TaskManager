@@ -6,32 +6,32 @@ import { ITask } from './ITask';
 })
 @Injectable()
 export class FilterPipe implements PipeTransform {
-    transform(items: ITask[], nameSearch: string, parentSearch: string, priorityFromSearch:number, priorityToSearch:number, startDateSearch:string, endDateSearch:string): ITask[] {
+    transform(items: ITask[], nameSearch: string, ParentTaskNameSearch: string, PriorityFromSearch:number, PriorityToSearch:number, StartDateSearch:string, EndDateSearch:string): ITask[] {
         
         if (!items) return [];
         return items.filter(items => {
-            if(nameSearch && items.taskName.toLocaleLowerCase().indexOf(nameSearch.toLocaleLowerCase()) == -1){
+            if(nameSearch && items.TaskName.toLocaleLowerCase().indexOf(nameSearch.toLocaleLowerCase()) == -1){
                 return false;}
-                if(parentSearch && items.parent.toLocaleLowerCase().indexOf(parentSearch.toLocaleLowerCase()) == -1){
+                if(ParentTaskNameSearch && items.ParentTaskName.toLocaleLowerCase().indexOf(ParentTaskNameSearch.toLocaleLowerCase()) == -1){
                     return false;}
-                if(priorityFromSearch && items.priority< priorityFromSearch){
+                if(PriorityFromSearch && items.Priority< PriorityFromSearch){
                     return false;}
-                if(priorityToSearch && items.priority> priorityToSearch){
+                if(PriorityToSearch && items.Priority> PriorityToSearch){
                     return false;}
            
-                if(startDateSearch )
+                if(StartDateSearch )
                 {
-                     var filStartDate = new Date(startDateSearch);
-                     var startDate = new Date(items.startDate)
-                     if(filStartDate.getDay() != startDate.getDay())
+                     var filStartDate = new Date(StartDateSearch);
+                     var StartDate = new Date(items.StartDate)
+                     if(filStartDate.getDay() != StartDate.getDay())
                      return false;
                 }
 
-                if(endDateSearch )
+                if(EndDateSearch )
                 {
-                     var filEndDate = new Date(endDateSearch);
-                     var endDate = new Date(items.endDate)
-                     if(filEndDate.getDay() != endDate.getDay())
+                     var filEndDate = new Date(EndDateSearch);
+                     var EndDate = new Date(items.EndDate)
+                     if(filEndDate.getDay() != EndDate.getDay())
                      return false;
                 }
 
