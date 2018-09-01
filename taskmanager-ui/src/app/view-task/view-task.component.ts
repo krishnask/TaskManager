@@ -4,6 +4,7 @@ import { TasksDalService } from '../tasks-dal.service';
 import{ITaskFilter} from '../Shared/ITaskFilter';
 import { TaskSearchService } from '../task-search.service';
 import {Router} from "@angular/router";
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-view-task',

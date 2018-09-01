@@ -17,7 +17,17 @@ export class TasksDalService {
   public getTasks()
   {
     return this.http.get<ITask[]>(environment.getTasksUrl)
-    .pipe(map(data => data), catchError(this.handleError));
+    .pipe(map(data => 
+      {
+        for (let d of data)
+        {
+          d.StartDate = d.StartDate.substr(0,10);
+          d.EndDate = d.EndDate.substr(0,10);
+        }
+        return data;
+      }
+     
+      ), catchError(this.handleError));
   }
   public getTask(TaskId:number):Observable<ITask>
   {``

@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { TasksDalService } from "../tasks-dal.service";
 import { Route } from "../../../node_modules/@angular/compiler/src/core";
+import {DatePipe} from '@angular/common';
 
 
 @Component({
