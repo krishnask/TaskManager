@@ -4,7 +4,7 @@ namespace TaskManager.DataModel
     using System.Data.Entity;
     using System.Linq;
 
-    public class TaskMangagerContext : DbContext
+    public class TaskManagerContext : DbContext
     {
         // Your context has been configured to use a 'Task' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -12,7 +12,7 @@ namespace TaskManager.DataModel
         // 
         // If you wish to target a different database and/or database provider, modify the 'Task' 
         // connection string in the application configuration file.
-        public TaskMangagerContext()
+        public TaskManagerContext()
             : base("name=TaskManagerContext")
         {
         }
@@ -21,7 +21,7 @@ namespace TaskManager.DataModel
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-        public DbSet<Task> tasks { get; set; }
+        public virtual DbSet<Task> tasks { get; set; }
     }
 
     //public class MyEntity

@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task.cs" />
-    <Compile Include="TaskMangagerContext.cs" />
+    <Compile Include="TaskManagerContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

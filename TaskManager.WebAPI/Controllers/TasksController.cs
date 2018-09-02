@@ -19,7 +19,7 @@ namespace TaskManager.WebAPI.Controllers
         ITaskServices _repository;
         public TasksController()
         {
-            _repository = new TaskServices();
+            _repository = TaskServices.CreateService();
         }
         // GET api/tasks
         public IHttpActionResult Get()

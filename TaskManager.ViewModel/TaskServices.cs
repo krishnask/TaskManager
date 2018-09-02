@@ -12,15 +12,19 @@ namespace TaskManager.BusinessServices
 {
     public class TaskServices : ITaskServices
     {
-        TaskMangagerContext _context;
+        TaskManagerContext _context;
         IMapper _mapper;
-        public TaskServices()
+        public static TaskServices CreateService()
+        {
+            return new TaskServices(new TaskManagerContext());
+        }
+        public TaskServices(TaskManagerContext context)
         {
             var config = new MapperConfiguration(cfg => cfg.CreateMap<Task, TaskDTO>().ReverseMap());
             
             _mapper = config.CreateMapper();               
       
-            _context = new TaskMangagerContext();
+            _context = context;
         }
         public bool AddTask(TaskDTO task)
         {
