@@ -26,7 +26,7 @@ namespace TaskManager.BusinessServices
       
             _context = context;
         }
-        public bool AddTask(TaskDTO task)
+        public bool AddTask(NewTaskDTO task)
         {
             Task taskData = _mapper.Map<Task>(task);
             _context.tasks.Add(taskData);
@@ -53,14 +53,14 @@ namespace TaskManager.BusinessServices
 
             return list;
         }
-        public bool UpdateTask(string taskNameKey, TaskDTO newtask)
+        public bool UpdateTask(TaskDTO changedTask)
         {
-            Task taskData = _mapper.Map<Task>(newtask);
+            Task taskData = _mapper.Map<Task>(changedTask);
 
-            var task = _context.tasks.SingleOrDefault(t => t.TaskName == taskNameKey);
+            var task = _context.tasks.SingleOrDefault(t => t.TaskId == changedTask.TaskId);
             if(task !=null)
             {
-                task = _mapper.Map<Task>(newtask);
+                task = _mapper.Map<Task>(changedTask);
                 _context.SaveChanges();
                 return true;
             }

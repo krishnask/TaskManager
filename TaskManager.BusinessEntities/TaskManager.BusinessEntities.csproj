@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FilterDTO.cs" />
+    <Compile Include="NewTaskDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaskDTO.cs" />
   </ItemGroup>

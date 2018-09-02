@@ -39,29 +39,40 @@ namespace TaskManager.WebAPI.Controllers
        
         // POST api/tasks
         // post us used to create new 
-        public IHttpActionResult Post(TaskDTO task)
+        public IHttpActionResult Post(NewTaskDTO newTask)
         {
-            bool ret = _repository.AddTask(task);
-            if(ret == true)
+            try
             {
-                return Ok();
+                bool ret = _repository.AddTask(newTask);
+                if (ret)
+                    return Ok(ret);
+                else
+                    return BadRequest();
             }
-            return NotFound();
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
         // PUT api/tasks/5
         // put is used to update
         public IHttpActionResult Put(string taskNameKey, [FromBody]TaskDTO task)
         {
-            bool ret = _repository.UpdateTask(taskNameKey, task);
-
-            if (ret == true)
+            try
             {
-                return Ok();
+                bool ret = _repository.UpdateTask(task);
+                if (ret)
+                    return Ok(ret);
+                else
+                    return BadRequest();
             }
-            return NotFound();
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
-
+/*
         // DELETE api/tasks/5
         public IHttpActionResult Delete(string taskName)
         {
@@ -71,6 +82,6 @@ namespace TaskManager.WebAPI.Controllers
                 return Ok();
             }
             return NotFound();
-        }
+        }*/
     }
 }
