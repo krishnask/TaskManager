@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  getTasksUrl:'http://172.18.4.141:3232/api/tasks'
+  tasksUrl:'http://localhost:51457/api/tasks'
 };
 
 /*

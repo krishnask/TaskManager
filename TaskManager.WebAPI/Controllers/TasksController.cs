@@ -39,7 +39,7 @@ namespace TaskManager.WebAPI.Controllers
        
         // POST api/tasks
         // post us used to create new 
-        public IHttpActionResult Post(NewTaskDTO newTask)
+        public IHttpActionResult Post(TaskDTO newTask)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace TaskManager.WebAPI.Controllers
 
         // PUT api/tasks/5
         // put is used to update
-        public IHttpActionResult Put(string taskNameKey, [FromBody]TaskDTO task)
+        public IHttpActionResult Put(int id, TaskDTO task)
         {
             try
             {

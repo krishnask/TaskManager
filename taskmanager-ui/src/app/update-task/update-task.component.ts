@@ -28,7 +28,7 @@ export class UpdateTaskComponent implements OnInit {
 
 
   AddUpdate() {
-console.log("TODO - call service here to update");
+this.taskService.Save(this.task).subscribe(response => console.log(response), err => console.log(err));
   }
 
   Cancel() {

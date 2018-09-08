@@ -26,7 +26,7 @@ namespace TaskManager.BusinessServices
       
             _context = context;
         }
-        public bool AddTask(NewTaskDTO task)
+        public bool AddTask(TaskDTO task)
         {
             Task taskData = _mapper.Map<Task>(task);
             _context.tasks.Add(taskData);
@@ -46,9 +46,8 @@ namespace TaskManager.BusinessServices
             return list;
         }
         public List<TaskDTO> GetTasks()
-        {
-            
-            var data = _context.tasks.ToList<Task>();
+        {            
+            var data = _context.tasks.Where(t => t.IsCompleted == false).ToList<Task>();
             var list = _mapper.Map<List<Task>, List<TaskDTO>>(data);
 
             return list;
@@ -57,14 +56,32 @@ namespace TaskManager.BusinessServices
         {
             Task taskData = _mapper.Map<Task>(changedTask);
 
-            var task = _context.tasks.SingleOrDefault(t => t.TaskId == changedTask.TaskId);
+            var entity = _context.tasks.Find(changedTask.TaskId);
+            if(entity == null)
+            {
+                return false;
+            }
+            var task = _mapper.Map<Task>(changedTask);
+
+            _context.Entry(entity).CurrentValues.SetValues(changedTask);
+            _context.SaveChanges();
+
+            return true;
+
+           /* var task = _context.tasks.SingleOrDefault(t => t.TaskId == changedTask.TaskId);
             if(task !=null)
             {
                 task = _mapper.Map<Task>(changedTask);
+
+                _context.Entry(task).State = EntityState.Modified;
+
+                _context.tasks.Attach(task);
+                
+                
                 _context.SaveChanges();
                 return true;
             }
-            return false;
+            return false;*/
         }
         public bool CompleteTask(string taskName)
         {
