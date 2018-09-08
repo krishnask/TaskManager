@@ -12,6 +12,5 @@ namespace TaskManager.BusinessServices
         bool AddTask(TaskDTO task);
         List<TaskDTO> GetTasks();
         bool UpdateTask(TaskDTO task);
-        bool CompleteTask(string taskName);
     }
 }

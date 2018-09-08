@@ -16,7 +16,7 @@
       <td>{{task.StartDate | date:'shortDate'}}</td>
       <td>{{task.EndDate | date:'shortDate'}}</td>
       <td><button style="width:100px"  (click)="EditTask(task.TaskId)">Edit</button></td>
-      <td><button style="width:100px">End Task</button></td>
+      <td><button style="width:100px" (click) ="EndTask(task)">End Task</button></td>
     </tr>
     </tbody>
   </table>

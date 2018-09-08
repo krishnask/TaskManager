@@ -33,18 +33,6 @@ namespace TaskManager.BusinessServices
             _context.SaveChanges();
             return false;
         }
-        public List<TaskDTO> GetTasks(FilterDTO filter)
-        {
-            // TODO use filter with linq
-            var data = _context.tasks.ToList<Task>();
-            if (data == null)
-            {
-                throw new ApplicationException("No value read from database");
-            }
-            var list=  _mapper.Map<List<Task>, List<TaskDTO>>(data);
-
-            return list;
-        }
         public List<TaskDTO> GetTasks()
         {            
             var data = _context.tasks.Where(t => t.IsCompleted == false).ToList<Task>();
@@ -67,46 +55,8 @@ namespace TaskManager.BusinessServices
             _context.SaveChanges();
 
             return true;
-
-           /* var task = _context.tasks.SingleOrDefault(t => t.TaskId == changedTask.TaskId);
-            if(task !=null)
-            {
-                task = _mapper.Map<Task>(changedTask);
-
-                _context.Entry(task).State = EntityState.Modified;
-
-                _context.tasks.Attach(task);
-                
-                
-                _context.SaveChanges();
-                return true;
-            }
-            return false;*/
+            
         }
-        public bool CompleteTask(string taskName)
-        {
-
-            var task = _context.tasks.SingleOrDefault(t => t.TaskName == taskName);
-            if (task != null)
-            {
-                task.IsCompleted = true;
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
-
-        }
-        public bool DeleteTask(string taskName)
-        {
-
-            var task = _context.tasks.SingleOrDefault(t => t.TaskName == taskName);
-            if (task != null)
-            {
-                _context.Entry(task).State = EntityState.Deleted;
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
-        }
+       
     }
 }

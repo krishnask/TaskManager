@@ -25,31 +25,15 @@ public EditTask(TaskId:number):void{
   const link = '../edit/'+ TaskId;
   this.router.navigate([link]);
 }
-//   mytask: ITask[] = 
-//   [
-//     {
-//         "TaskName": "First Task",
-//         "ParentTaskName": "First ParentTaskName",
-//         "Priority": 2,
-//         "StartDate": new Date("2015-03-25"),
-//         "EndDate": new Date("2015-03-25")
-//     },
-//     {
-//         "TaskName": "Second Task",
-//         "ParentTaskName": "Second ParentTaskName",
-//         "Priority": 5,
-//         "StartDate": new Date("2015-03-25"),
-//         "EndDate": new Date("2015-03-25")
-//     },
-//     {
-//         "TaskName": "custom one",
-//         "ParentTaskName": "here too a custom",
-//         "Priority": 20,
-//         "StartDate": new Date("2015-03-25"),
-//         "EndDate": new Date("2017-03-17")
-//     }
-// ]
+public EndTask(task:ITask):void{
+  console.log("EndTask");
+  console.log(task);
+  task.IsCompleted = true;
+  
+ this.dal.Save(task).subscribe(response => console.log(response), err => console.log(err));
 
+ this.tasks = this.tasks.filter(t => t.TaskId !== task.TaskId);
+}
   ngOnInit() { 
        this.dal.getTasks().subscribe(task => {
          this.tasks = task;

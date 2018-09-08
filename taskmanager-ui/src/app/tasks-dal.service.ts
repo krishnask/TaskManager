@@ -56,7 +56,8 @@ export class TasksDalService {
 
  var body = JSON.stringify(task);
  const url = `${environment.tasksUrl}/${task.TaskId}`;
-
+console.log(url);
+console.log(body);
   return this.http
     .put(url, body, httpOptions)
     .pipe(catchError(this.handleError));

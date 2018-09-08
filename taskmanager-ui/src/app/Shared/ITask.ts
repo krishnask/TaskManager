@@ -7,6 +7,7 @@ export interface ITask{
     ParentTaskName:string;
     StartDate:string;
     EndDate:string;
+    IsCompleted:boolean;
 }
 export class Task implements ITask
 {
@@ -16,4 +17,5 @@ export class Task implements ITask
     ParentTaskName:string;
     StartDate:string;
     EndDate:string;
+    IsCompleted:boolean;
 }

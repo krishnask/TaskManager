@@ -17,18 +17,10 @@ export class UpdateTaskComponent implements OnInit {
   error: any;
   navigated = false; // true if navigated here
   buttonCaption:string;
-  task1: ITask = {
-    TaskId:0,
-    TaskName: "empty",
-    Priority: 0,
-    ParentTaskName: "",
-    StartDate: "",
-    EndDate: ""
-  };
-
 
   AddUpdate() {
 this.taskService.Save(this.task).subscribe(response => console.log(response), err => console.log(err));
+this.Cancel();
   }
 
   Cancel() {
