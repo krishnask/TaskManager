@@ -31,7 +31,7 @@ namespace TaskManager.BusinessServices
             Task taskData = _mapper.Map<Task>(task);
             _context.tasks.Add(taskData);
             _context.SaveChanges();
-            return false;
+            return true;
         }
         public List<TaskDTO> GetTasks()
         {            
@@ -45,11 +45,12 @@ namespace TaskManager.BusinessServices
             Task taskData = _mapper.Map<Task>(changedTask);
 
             var entity = _context.tasks.Find(changedTask.TaskId);
-            if(entity == null)
+            var task = _mapper.Map<Task>(changedTask);
+            if (entity == null)
             {
                 return false;
             }
-            var task = _mapper.Map<Task>(changedTask);
+            
 
             _context.Entry(entity).CurrentValues.SetValues(changedTask);
             _context.SaveChanges();
