@@ -10,6 +10,7 @@ using TaskManager.DataModel;
 using System.Data.Entity;
 using System.Web.Http;
 using Moq;
+using NBench;
 
 namespace TaskManager.Tests
 {
@@ -17,6 +18,9 @@ namespace TaskManager.Tests
     public class TestTaskManager
     {
         [Test]
+        [PerfBenchmark(NumberOfIterations =500,RunTimeMilliseconds =600000,RunMode =RunMode.Iterations)]
+        [CounterMeasurement("MyCounter")]
+        [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
         public void TestGetAllTasks_WithValues()
         {
             
@@ -275,10 +279,7 @@ namespace TaskManager.Tests
 
                 Assert.That(taskList.Count == 0);
                 bool ret = service.AddTask(task);
-
-               
-
-               
+          
             }
             catch (Exception ex)
             {
