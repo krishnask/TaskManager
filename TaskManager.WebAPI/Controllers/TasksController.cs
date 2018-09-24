@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using TaskManager.BusinessServices;
 using TaskManager.BusinessEntities;
+using System.Web.Http.Cors;
 // get - no filter - implement, test using postman, test using nunit, test using nBench, find coverage using nCover
 // integrate unit testing, coverage and load testing using jenkins, deploy in iis
 //post - create
@@ -13,6 +14,7 @@ using TaskManager.BusinessEntities;
 
 namespace TaskManager.WebAPI.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200,http://localhost", headers: "*", methods:"*")]
     public class TasksController : ApiController
     {
 
