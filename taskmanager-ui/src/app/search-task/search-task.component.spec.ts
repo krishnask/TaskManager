@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import{FormsModule} from '@angular/forms';
 
 import { SearchTaskComponent } from './search-task.component';
 
@@ -9,6 +10,7 @@ describe('SearchTaskComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FormsModule],
       declarations: [ SearchTaskComponent ]
     })
     .compileComponents();

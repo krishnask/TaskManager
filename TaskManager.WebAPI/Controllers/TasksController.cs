@@ -15,7 +15,7 @@ using System.Web.Http.Cors;
 
 namespace TaskManager.WebAPI.Controllers
 {
-    [EnableCors(origins: "http://localhost:4200,http://localhost", headers: "*", methods:"*")]
+    [EnableCors(origins: "*", headers: "*", methods:"*")]
     public class TasksController : ApiController
     {
 
