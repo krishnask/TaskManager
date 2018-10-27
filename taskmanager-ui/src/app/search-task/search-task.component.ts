@@ -7,6 +7,7 @@ import { TaskSearchService } from '../task-search.service';
   templateUrl: './search-task.component.html',
   styleUrls: ['./search-task.component.css']
 })
+
 export class SearchTaskComponent implements OnInit {
   
   constructor(private tss:TaskSearchService) {
